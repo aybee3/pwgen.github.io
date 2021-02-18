@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="https://kit.fontawesome.com/ced897c645.js" crossorigin="anonymous"></script>
+    <title>Password Generator</title>
+</head>
+
+<body class="bg-gray-900">
+
+    <!-- Output field -->
+    <div class="w-full mt-6">
+        <div class="flex items-center justify-center">
+            <div class="container mx-8 bg-gray-800 rounded border-2 border-white">
+                <div class="px-8 pt-1">
+                    <div class="text-center">
+                        <h1 class="text-3xl text-white my-3 w-full">Client-end Password Generator</h1>
+                        <div class="w-full text-center">
+                            <form action="#">
+                                <div class="max-w-sm mx-auto pb-5 pr-0 flex items-center">
+                                    <output placeholder="Generate Password"
+                                        class="flex-1 rounded shadow bg-gray-800 border-2 border-white text-white font-bold py-10 px-4 my-2"
+                                        id="passwordBox" style="width: 10px; word-wrap:break-word;">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Range selector -->
+    <div class="flex justify-center py-6">
+        <p class="text-white mr-5 py-2">Length</p>
+        <input class="w-64" id="slider" type="range" min="8" max="64" value="16" step="1"
+            oninput="sliderChange(this.value)">
+
+        <output id="sliderVal"
+            class="flex items-center bg-gray-800 border-2 border-white text-white font-bold py-2 px-4 ml-4">
+            16
+        </output>
+    </div>
+
+    <!-- Settings -->
+    <div class="items-center justify-center pb-8 grid">
+        <div class="container">
+            <label class="inline-flex items-center mt-3">
+                <input type="checkbox" class="form-checkbox h-6 w-6" checked id="checkUpper" onclick="funUpper()"><span
+                    class="ml-2 text-white">Uppercase
+                    letters [A-Z]</span>
+            </label>
+        </div>
+        <div class="container">
+            <label class="inline-flex items-center mt-3">
+                <input type="checkbox" class="form-checkbox h-6 w-6" checked id="checkLower" onclick="funLower()"><span
+                    class="ml-2 text-white">Lowercase
+                    letters [a-z]</span>
+            </label>
+        </div>
+        <div class="container">
+            <label class="inline-flex items-center mt-3">
+                <input type="checkbox" class="form-checkbox h-6 w-6" checked id="checkNumber"
+                    onclick="funNumber()"><span class="ml-2 text-white">Numbers
+                    [0-9]</span>
+            </label>
+        </div>
+        <div class="container">
+            <label class="inline-flex items-center mt-3">
+                <input type="checkbox" class="form-checkbox h-6 w-6" checked id="checkSpecial"
+                    onclick="funSpecial()"><span class="ml-2 text-white">Special
+                    characters [!@#$^&*] </span>
+            </label>
+        </div>
+        <div class="container">
+            <label class="inline-flex items-center mt-3">
+                <input type="checkbox" class="form-checkbox h-6 w-6" checked id="checkAmbigious"
+                    onclick="funAmbigious()"><span class="ml-2 text-white">Avoid
+                    ambigious characters [1l, o0O] </span>
+            </label>
+        </div>
+    </div>
+
+
+    <!-- Action buttons -->
+
+    <div class="flex justify-center mb-3">
+        <div class="px-2">
+            <button
+                class="flex items-center bg-green-400 hover:bg-blue-500 border-2 border-white text-white font-bold py-2 px-4"
+                onclick="generatePassword()">
+                <i class="fas fa-shield-alt fa-2x fa-fw"></i>Generate Password
+            </button>
+        </div>
+        <div class="px-2">
+            <button
+                class="flex items-center bg-green-500 hover:bg-blue-400 border-2 border-white text-white font-bold py-2 px-4"
+                onclick="copyPassword()">
+                <i class="fas fa-copy fa-2x fa-fw"></i>Copy
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts     -->
+    <script src="./src/app.js"></script>
+</body>
+
+</html>
