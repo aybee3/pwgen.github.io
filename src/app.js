@@ -77,12 +77,12 @@ function rngPassGenerator(length) {
             rngPassGenerator(length);
     }
     if (actionNumber) {
-        check = rngPassword.match(/\d/);
+        check = rngPassword.match(/\w/);
         if (check == null)
             rngPassGenerator(length);
     }
     if (actionSpecial) {
-        check = rngPassword.match(/W/);
+        check = rngPassword.match(/\W/);
         if (check == null)
             rngPassGenerator(length);
     }

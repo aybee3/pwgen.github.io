@@ -60,8 +60,8 @@ function rngPassGenerator(length: number): string {
     // Construct superset of pool of characters based on the user requirement
     if (actionUpper) upperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     if (actionLower) lowerChar = 'abcdefghijklmnopqrstuvwxyz';
-    if (actionNumber) numChar   = '0123456789';
-    if (actionSpecial) splChar   = '!@#$^&*';
+    if (actionNumber) numChar = '0123456789';
+    if (actionSpecial) splChar = '!@#$^&*';
     var charSuperset: string = upperChar + lowerChar + numChar + splChar;
 
     // Remove ambigious characters from superset pool if required
@@ -84,11 +84,11 @@ function rngPassGenerator(length: number): string {
         if (check == null) rngPassGenerator(length);
     }
     if (actionNumber) {
-        check = rngPassword.match(/\d/);
+        check = rngPassword.match(/\w/);
         if (check == null) rngPassGenerator(length);
     }
     if (actionSpecial) {
-        check = rngPassword.match(/W/);
+        check = rngPassword.match(/\W/);
         if (check == null) rngPassGenerator(length);
     }
 
