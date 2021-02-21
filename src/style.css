@@ -833,7 +833,17 @@ video {
   }
 }
 
+/* 
+Changing the color palette of the website
+Can be accessed here: https://coolors.co/42026f-53197c-3c0265-350259-5d357a
+Button default gets: #42026f 
+Button hover gets: #5d357a 
+
+
+*/
+
 @media (min-width: 640px) {
+
 }
 
 @media (min-width: 768px) {
